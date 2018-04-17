@@ -66,7 +66,7 @@ class SignUpModal extends React.Component {
         }).then(
             (response) => response.json()
         ).then((data) => {
-            
+            this.props.setScreenname(data.user)
             localStorage.setItem('screenname', data.user.screenname)
             this.props.setToken(data.sessionToken);
             console.log(data)

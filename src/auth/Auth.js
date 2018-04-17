@@ -20,10 +20,10 @@ const Auth = (props) => {
      
         return(
            <AuthDiv>
-               <SignIn setToken={props.setToken}/>
+               <SignIn setToken={props.setToken} setScreenname={props.setScreenname}/>
 
                
-               <SignUp setToken={props.setToken}/>
+               <SignUp setToken={props.setToken} setScreenname={props.setScreenname}/>
             </AuthDiv>
             // need a modal up there 
         )

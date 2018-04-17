@@ -2,22 +2,75 @@ import React from 'react';
 import { Button } from 'reactstrap';
 import ProfileBlock from '../profile/ProfileBlock'
 import NewShade from '../shade/NewShade';
+import ShadeFeed from '../shade/ShadeFeed';
 
-const Home = (props) => {
+class Home extends React.Component  {
+    constructor(props){
+        super(props)
+        this.state = {
+            shades: [],
+
+
+        }
+        this.getShades = this.getShades.bind(this);
+        this.deleteShade = this.deleteShade.bind(this)
+    }
+
+
+
+    // fetch all shades
+    getShades() {
+        fetch('http://localhost:8000/shade/all', {
+            method: 'GET',
+            headers: new Headers({
+                'Content-Type' : 'application/json',
+                'Authorization' : localStorage.getItem('token')
+            })
+        }).then((res) => res.json())
+        .then((shades) => {
+            console.log(shades)
+            return this.setState({ shades: shades })
+        })
+    }
+
+    // delete a shade
+    deleteShade(event) {
+        localStorage.setItem('shadeid', event.target.id)
+        fetch(`http://localhost:8000/shade/delete/${localStorage.getItem('shadeid')}`, {
+            method: 'DELETE',
+            headers: new Headers({
+                'Content-Type' : 'application/json',
+                'Authorization' : localStorage.getItem('token')
+            }) 
+        }).then((res) => {
+            localStorage.removeItem('shadeid')
+            this.getShades();
+        }
+    )
+    }
+
+
+    // update a shade
+
+    
+
+    componentWillMount() {
+        this.getShades();
+    }
+
+    render() {
     return (
         <div>
 
             <div>
                 <Button color="primary">code of conduct</Button>
                 <Button color="primary">profile</Button>
-                <Button color="primary" onClick={props.clickLogout}>sign out</Button>
+                <Button color="primary" onClick={this.props.clickLogout}>sign out</Button>
             </div>
-            <ProfileBlock />
-            <NewShade />
-            <div>recent shades feed</div>
-
+                <ProfileBlock shades={this.state.shades}/>
+                <NewShade updateShades={this.getShades}screenname={this.props.screenname}/>
+                <ShadeFeed delete={this.deleteShade} shades={this.state.shades}/>
         </div>
-    )
+    )}
 }
-
 export default Home

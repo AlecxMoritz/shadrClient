@@ -31,7 +31,9 @@ export default class SignIn extends React.Component {
             (response) => response.json()
         ).then((data) => {
             this.props.setToken(data.sessionToken);
+            this.props.setScreenname(data.user)
             localStorage.setItem('screenname', data.user.usersymbol + data.user.screenname)
+            localStorage.setItem('id', data.user.id);
         })
         .catch(function(err) {
             console.log(err)

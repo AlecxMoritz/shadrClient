@@ -11,9 +11,11 @@ class App extends Component {
     super(props);
     this.state = {
       sessionToken: '',
+      screenname: ''
     }
     this.setSessionState = this.setSessionState.bind(this);
     this.logout = this.logout.bind(this)
+    this.setScreenname = this.setScreenname.bind(this)
     // bind things here
   }
 
@@ -22,9 +24,16 @@ class App extends Component {
     this.setState({ sessionToken: token })
   }
 
+  setScreenname(user) {
+    let screenName = user.usersymbol + user.screenname
+      localStorage.setItem('screenname', user.usersybmol + user.screenname)
+      this.setState({ screenname: screenName})
+  }
+
   logout() {
     this.setState({
       sessionToken: '',
+      screenname: '',
     })
     localStorage.clear();
     // window.location.reload();
@@ -38,7 +47,7 @@ class App extends Component {
       <Router>
         <Switch>
           <Route path='/' exact>
-            <Home sessionToken={this.state.sessionToken} clickLogout={this.logout} />
+            <Home screenname={this.state.screenname} sessionToken={this.state.sessionToken} clickLogout={this.logout} />
           </Route>
         </Switch>
       </Router>
@@ -47,7 +56,7 @@ class App extends Component {
       return (
       <Router>
         <Route>
-            <Auth setToken={this.setSessionState} />
+            <Auth setToken={this.setSessionState} setScreenname={this.setScreenname}/>
         </Route>
       </Router>
       )
