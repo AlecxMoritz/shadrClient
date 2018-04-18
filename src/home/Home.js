@@ -63,13 +63,13 @@ class Home extends React.Component  {
         <div>
 
             <div>
-                <Button color="primary">code of conduct</Button>
-                <Button color="primary">profile</Button>
-                <Button color="primary" onClick={this.props.clickLogout}>sign out</Button>
+                <Button color="#FF8921">code of conduct</Button>
+                <Button color="#FF8921">profile</Button>
+                <Button color="#FF8921" onClick={this.props.clickLogout}>sign out</Button>
             </div>
                 <ProfileBlock shades={this.state.shades}/>
-                <NewShade updateShades={this.getShades}screenname={this.props.screenname}/>
-                <ShadeFeed delete={this.deleteShade} shades={this.state.shades}/>
+                <NewShade getShades={this.getShades}screenname={this.props.screenname}/>
+                <ShadeFeed getShades={this.getShades} delete={this.deleteShade} shades={this.state.shades}/>
         </div>
     )}
 }

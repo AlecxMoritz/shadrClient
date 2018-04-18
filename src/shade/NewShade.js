@@ -41,8 +41,10 @@ class NewShade extends React.Component  {
         .then((shadeData) => {
             console.log(shadeData)
         })
+        {this.props.getShades();}
         event.preventDefault();
-        document.forms["newShade"].reset();   
+        document.forms["newShade"].reset();
+        // needs to more shades
               
    }
 

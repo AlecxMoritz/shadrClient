@@ -1,4 +1,21 @@
 import React from 'react';
+import styled from 'styled-components'
+
+// styles
+
+const ProfileSection = styled.div`
+    background-color: #575757
+    margin: .5em;
+    padding: .5em;
+`;
+
+const ScreenName = styled.h1`
+    color: #FF8921
+`;
+
+const UserRank = styled.p`
+    font-weight: bold;
+`;
 
 export default class ProfileBlock extends React.Component {
     constructor(props) {
@@ -41,11 +58,11 @@ export default class ProfileBlock extends React.Component {
 
     render() {
         return (
-            <div>
-                <h1>{this.state.screenname}</h1>
-                <p>{this.state.userrank}</p>
+            <ProfileSection>
+                <ScreenName>{this.state.screenname}</ScreenName>
+                <UserRank>{this.state.userrank}</UserRank>
                 <span>{this.state.dislikesgiven}</span>
-            </div>
+            </ProfileSection>
         )
     }
 }

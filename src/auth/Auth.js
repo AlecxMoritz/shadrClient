@@ -6,10 +6,10 @@ import styled from 'styled-components';
 
 const AuthDiv = styled.div`
     background-color: #575757
-    height: 50vw;
-    width: 70vw;
-    margin: auto;
-    padding: auto;
+    height: 70vw;
+    width: 90vw;
+    margin: 1em;
+    padding: 1em;
     text-align: center;
 `
 

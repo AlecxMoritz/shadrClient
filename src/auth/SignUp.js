@@ -1,5 +1,9 @@
 import React from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Input } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, Input ,  FormGroup, } from 'reactstrap';
+// import Link from 'valuelink'
+// import { Input } from 'valuelink/tags.jsx'
+
+// Form, Input
 
 class SignUpModal extends React.Component {
   constructor(props) {

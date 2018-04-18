@@ -5,6 +5,7 @@ import Auth from './auth/Auth';
 import Home from './home/Home'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
+import { Helmet } from 'react-helmet'
 
 class App extends Component {
   constructor(props) {
@@ -39,7 +40,7 @@ class App extends Component {
     // window.location.reload();
   }
 
-
+  // add special buttons to protected routes
 
   protectedViews = () => {
     if( this.state.sessionToken === localStorage.getItem('token')) {
@@ -47,6 +48,7 @@ class App extends Component {
       <Router>
         <Switch>
           <Route path='/' exact>
+          
             <Home screenname={this.state.screenname} sessionToken={this.state.sessionToken} clickLogout={this.logout} />
           </Route>
         </Switch>
@@ -69,6 +71,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Helmet>
+          <style>{'body { background-color: #2a2a2a; }'}</style>
+        </Helmet>
        
        <NavBar />
        {this.protectedViews()}
