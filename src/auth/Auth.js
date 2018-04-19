@@ -3,6 +3,7 @@ import SignIn from './SignIn';
 import SignUp from './SignUp';
 import styled from 'styled-components';
 
+import SignUpModal from './SignUpModal'
 
 const AuthDiv = styled.div`
     background-color: #575757
@@ -11,6 +12,8 @@ const AuthDiv = styled.div`
     margin: 1em;
     padding: 1em;
     text-align: center;
+    border-radius: 5%
+    box-shadow: 13px 18px 3px rgb(30, 30, 30);
 `
 
 const Auth = (props) => {
@@ -23,7 +26,9 @@ const Auth = (props) => {
                <SignIn setToken={props.setToken} setScreenname={props.setScreenname}/>
 
                
-               <SignUp setToken={props.setToken} setScreenname={props.setScreenname}/>
+               
+               
+               <SignUpModal setToken={props.setToken} setScreenname={props.setScreenname}/>
             </AuthDiv>
             // need a modal up there 
         )

@@ -7,7 +7,6 @@ const ProfileSection = styled.div`
     background-color: #575757
     margin: .5em;
     padding: .5em;
-    border-radius: 3%
 `;
 
 const ScreenName = styled.h1`
@@ -17,6 +16,8 @@ const ScreenName = styled.h1`
 const UserRank = styled.p`
     font-weight: bold;
 `;
+
+// need an edit
 
 export default class ProfileBlock extends React.Component {
     constructor(props) {
@@ -42,7 +43,6 @@ export default class ProfileBlock extends React.Component {
             })
         }).then((res) => res.json())
         .then((user) => {
-            
             this.setState({
                 screenname: `${user.user.usersymbol}${user.user.screenname}`,
                 userimg: user.img,

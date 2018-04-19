@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, Input ,  FormGroup, } from 'reactstrap';
+import '../App.css';
 // import Link from 'valuelink'
 // import { Input } from 'valuelink/tags.jsx'
 
@@ -23,6 +24,8 @@ class SignUpModal extends React.Component {
     };
 
     this.toggle = this.toggle.bind(this);
+
+    
     this.toggleNested = this.toggleNested.bind(this);
     this.toggleAll = this.toggleAll.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -84,12 +87,12 @@ class SignUpModal extends React.Component {
     return (
       <div>
           <p style={{color: '#FF8921'}} onClick={this.toggle}>need an account? sign up</p>
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+        <Modal id="SignUpModalOne" isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader>shadr code of conduct</ModalHeader>
           <ModalBody>
             shadr has lots of rules they will be here
             <br />
-            <Modal isOpen={this.state.nestedModal} toggle={this.toggleNested} onClosed={this.state.closeAll ? this.toggle : undefined}>
+            <Modal id="SignUpModalTwo"isOpen={this.state.nestedModal} toggle={this.toggleNested} onClosed={this.state.closeAll ? this.toggle : undefined}>
             <ModalHeader>Some info from you rq</ModalHeader>
             <ModalBody>
                 <Form>
@@ -97,7 +100,7 @@ class SignUpModal extends React.Component {
                     <Input type="text" name="name" id="name" placeholder="name" onChange={this.handleChange} />
                 </FormGroup>
                 <FormGroup>
-                    <Input type="text" name="email" id="email" placeholder="email" onChange={this.handleChange} />
+                    <Input type="email" name="email" id="email" placeholder="email"  onChange={this.handleChange} />
                 </FormGroup>
                 <FormGroup>
                     <Input type="text" name="screenname" id="screenname" placeholder="screenname" onChange={this.handleChange} />

@@ -1,5 +1,10 @@
 import React from 'react';
 import { Form, FormGroup, Input, Button } from 'reactstrap';
+import styled from 'styled-components';
+
+const SignInHeader = styled.h1`
+    color: #FF8921
+`;
 
 export default class SignIn extends React.Component {
     constructor(props) {
@@ -20,7 +25,7 @@ export default class SignIn extends React.Component {
     }
 
     handleSubmit(event) {
-        console.log(this.state)
+        
         fetch('http://localhost:8000/user/login', {
             method: 'POST',
             body: JSON.stringify({user:this.state}),
@@ -44,7 +49,7 @@ export default class SignIn extends React.Component {
     render() {
         return (
         <div>
-            <h1><center>sign in</center></h1>
+            <SignInHeader><center>sign in</center></SignInHeader>
             <Form onSubmit={this.handleSubmit}>
                 <FormGroup>
                     <Input type="text" name="screenname" id="screenname" placeholder="screenname" onChange={this.handleChange} />
@@ -52,7 +57,7 @@ export default class SignIn extends React.Component {
                 <FormGroup>
                     <Input type="password" name="password" id="password" placeholder="password" onChange={this.handleChange} />
                 </FormGroup>
-                <Button>submit</Button>
+                <Button style={{backgroundColor: '#FF8921'}}>submit</Button>
             </Form>
         </div>
         )

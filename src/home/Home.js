@@ -3,12 +3,24 @@ import { Button } from 'reactstrap';
 import ProfileBlock from '../profile/ProfileBlock'
 import NewShade from '../shade/NewShade';
 import ShadeFeed from '../shade/ShadeFeed';
+import CodeOfConductButton from '../MainButtons/CodeOfConductButton';
+import CodeOfConductModal from '../MainButtons/CodeOfConductModal';
+import styled from 'styled-components'
+
+import ProfileButton from '../MainButtons/ProfileButton';
+
+const MainButtons = styled.div`
+    position: relative,
+    margin: auto
+`;
+
 
 class Home extends React.Component  {
     constructor(props){
         super(props)
         this.state = {
             shades: [],
+            myshades: [],
 
 
         }
@@ -28,10 +40,12 @@ class Home extends React.Component  {
             })
         }).then((res) => res.json())
         .then((shades) => {
-            console.log(shades)
             return this.setState({ shades: shades })
         })
     }
+
+    // get all shades for a user
+ 
 
     // delete a shade
     deleteShade(event) {
@@ -58,18 +72,28 @@ class Home extends React.Component  {
         this.getShades();
     }
 
+
+
     render() {
     return (
         <div>
 
+            <MainButtons className="btn-group" roll="group">
+                
+                <CodeOfConductModal style={{display: 'inline-block'}} />
+                
+                <ProfileButton  myshades={this.state.myshades} delete={this.deleteShade}/>
+
+                <Button style={{backgroundColor: '#FF8921'}} onClick={this.props.clickLogout}>sign out</Button>
+                
+            </MainButtons>
+
+
             <div>
-                <Button color="#FF8921">code of conduct</Button>
-                <Button color="#FF8921">profile</Button>
-                <Button color="#FF8921" onClick={this.props.clickLogout}>sign out</Button>
-            </div>
                 <ProfileBlock shades={this.state.shades}/>
                 <NewShade getShades={this.getShades}screenname={this.props.screenname}/>
                 <ShadeFeed getShades={this.getShades} delete={this.deleteShade} shades={this.state.shades}/>
+            </div>
         </div>
     )}
 }

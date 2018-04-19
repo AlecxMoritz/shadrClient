@@ -1,5 +1,23 @@
 import React from 'react';
-import { Button, Form, FormGroup, InputGroup, InputGroupAddon, Input } from 'reactstrap'
+import { Button, Form, FormGroup  } from 'reactstrap'
+import styled from 'styled-components'
+
+const ShadeBox = styled.div`
+    background-color: #575757
+    margin: .5em;
+    padding: .5;
+    border-radius: 2%
+`;
+
+const NewShadeText = styled.textarea`
+    margin: auto,
+    width: 80vw,
+    height: 20vw,
+`;
+
+const PostButton = styled.button`
+
+`;
 
 class NewShade extends React.Component  {
    constructor(props) {
@@ -19,7 +37,7 @@ class NewShade extends React.Component  {
        this.setState({
            [event.target.name]: event.target.value
         })
-        console.log(this.state)
+        
     }
 
 
@@ -38,15 +56,12 @@ class NewShade extends React.Component  {
             })
         })
         .then((res) => res.json())
-        .then((shadeData) => {
-            console.log(shadeData)
+        .then((shadeData) => {     
         })
         {this.props.getShades();}
         event.preventDefault();
         document.forms["newShade"].reset();
-        // needs to more shades
-              
-   }
+        }
 
    // render
    /////////
@@ -55,14 +70,16 @@ class NewShade extends React.Component  {
    render() {
         return (
             <div>
-            <Form id="newShade" onSubmit={this.handleSubmit}>
+                <ShadeBox>
+            <Form id="newShade" style={{padding: 'auto'}} onSubmit={this.handleSubmit}>
                 <FormGroup>
-                    <InputGroupAddon addonType="prepend">{this.props.screenname}</InputGroupAddon>
-                    <Input type="text" name="text" id="text" placeholder="new shade box" onChange={this.handleChange} />
+                    
+                    <NewShadeText style={{width: '85vw', height: '20vw', marginTop: '.5em', marginLeft: '1em', }} type="text" name="text" id="text" maxLength="120" placeholder="feelin' shady?" onChange={this.handleChange} ></NewShadeText>
                 </FormGroup>
-                <Button>post shade</Button>
+                <Button style={{backgroundColor: '#FF8921', margin: 'auto', position: 'relative', bottom: '.5em', left: '18em'}}>post</Button>
             </Form>
-            </div>
+            </ShadeBox>
+        </div>
         )
     }
 }
