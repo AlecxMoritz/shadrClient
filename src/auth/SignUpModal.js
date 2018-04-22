@@ -29,7 +29,8 @@ const customStyles = {
         borderWidth: '1.5px',
         borderRadius: '3%',
         overflow: 'scroll',
-        height: '500px', // <-- This sets the height
+        height: '30em', 
+        width: '20.2em',
         overlfow: 'scroll' //
     },
 
@@ -155,7 +156,7 @@ handleSubmit(event) {
   render() {
     return (
       <div>
-        <p style={{color: '#FF8921'}} onClick={this.openModal}>need an account? sign up</p>
+        <p style={{color: '#FF8921', position: 'relative', bottom: '.3em'}} onClick={this.openModal}>need an account? sign up</p>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -164,10 +165,10 @@ handleSubmit(event) {
           contentLabel="code of conduct"
         >
 
-          <h2 ref={subtitle => this.subtitle = subtitle}>shadr code of conduct</h2>
+          <h2 ref={subtitle => this.subtitle = subtitle}><center>shadr code of conduct</center></h2>
           <hr />
           <br />
-          <div>shadr is a platform for personal venting and stress release. Did the drive through down the street get your order wrong again? and again?<br />Did that guy in the meeting get all the praise for repeating exactly what you said?<br />Do you feel like you need to shout to th void for a minute? Then read our rules, join shadr, and cast your shade.
+          <div>shadr is a platform for personal venting and stress release. Did the drive through down the street get your order wrong again? and again? Has the woman in line ahead of you at the gas station been arguing about a twenty-five cent price difference for the last four minutes? Did that guy in the meeting get all the praise for repeating exactly what you said? Do you feel like you need to shout to the void for a minute? Then read our rules, join shadr, and throw your shade.
           </div>
           <br />
           <div>By making an account on shadr you agree to follow the rules we have set forth. They are as follows:</div>
@@ -176,15 +177,17 @@ handleSubmit(event) {
             <br />
             <div>You will not use your shadr account in any attempts of cyberbullying.</div>
             <br />
-            <div>You will refrain from posting anything condeming about anyone on a basis of: race, sexual orientation or preference, gender identity, sexual identity, gender presentation, or similar way of life. shadr reserves the right for interperation of shades, and may delete your shade if it is deemed condeming on any personal front. </div>
+            <div>You will refrain from posting anything condeming about anyone on a basis of: race, sexual orientation or preference, gender identity, sexual identity, gender presentation, or similar way of life. </div>
             <br />
-            <div>You will refrain from targeting a certain memeber of shadr with any of your shades.</div>
+            <div>shadr reserves the right for interperation of shades, and may delete your shade without warning it we feel it violates our rules. </div>
+            <br />
+            <div>You will refrain from specifically targeting a certain memeber of shadr with any of your shades.</div>
             <br />
             <div>You will refrain from posting any personal information about yourself or others. Including but not limited to: names, addresses, work places, or frequented locations.</div>
             <br />
             <div>If asked to cease and desist, you will do so immediately.</div>
             <br />
-            <div>Violations of shadr rules will be determined by admins. Decisions are final and the offending shade may be deleted without warning. shadr is not requied to save any shades deemed inappropriate for the platform.</div>
+            <div>Violations of shadr rules will be determined by admins. Decisions are final and the offending shades or users may be deleted without warning. shadr is not requied to save any shades deemed inappropriate for the platform.</div>
             <br />
             <div>shadr reserves the right to terminate any account that engages in inappropriate behaviour without warning.</div>
             <br />
@@ -202,24 +205,30 @@ handleSubmit(event) {
           style={customStyles}
           contentLabel="sign up"
         >
-              <h2 ref={subtitle => this.subtitle = subtitle}>sign up</h2>
+              <h2 ref={subtitle => this.subtitle = subtitle}><center>sign up</center></h2>
               <br />
               <br />
                          <Form>
                 <FormGroup>
-                    <Input type="text" name="name" id="name" placeholder="name" onChange={this.handleChange} />
+                    
+                    <Input type="text" name="name" id="name" placeholder="enter your name" onChange={this.handleChange} />
                 </FormGroup>
                 <FormGroup>
-                    <Input type="email" name="email" id="email" placeholder="email"  onChange={this.handleChange} />
+                    <br />
+                    <Input type="email" name="email" id="email" placeholder="enter a valid email"  onChange={this.handleChange} />
                 </FormGroup>
                 <FormGroup>
-                    <Input type="text" name="screenname" id="screenname" placeholder="screenname" onChange={this.handleChange} />
+                    
+                    <br />
+                    <Input type="text" name="screenname" id="screenname" placeholder="choose your screenname" onChange={this.handleChange} />
                 </FormGroup>
                 <FormGroup>
-                    <Input type="password" name="password" id="password" placeholder="password" onChange={this.handleChange} />
+                    <br />
+                    <Input type="password" name="password" id="password" placeholder="password with at least six characters" onChange={this.handleChange} />
                 </FormGroup>
                 </Form>
-
+                
+                <br />
           <Button style={{backgroundColor: '#FF8921'}} onClick={this.closeAll}>nevermind, cancel</Button>
           
           <Button style={{backgroundColor: '#FF8921'}} onClick={this.closeModal} onClick={this.handleSubmit}>sign me up</Button>

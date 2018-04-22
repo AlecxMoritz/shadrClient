@@ -3,6 +3,8 @@ import { Form, FormGroup, Input, Button } from 'reactstrap';
 import styled from 'styled-components';
 
 const SignInHeader = styled.h1`
+    position: relative;
+    bottom: .3em;
     color: #FF8921
 `;
 
@@ -57,7 +59,7 @@ export default class SignIn extends React.Component {
                 <FormGroup>
                     <Input type="password" name="password" id="password" placeholder="password" onChange={this.handleChange} />
                 </FormGroup>
-                <Button style={{backgroundColor: '#FF8921'}}>submit</Button>
+                <Button style={{backgroundColor: '#FF8921',position: 'relative', bottom: '.3em'}}>submit</Button>
             </Form>
         </div>
         )

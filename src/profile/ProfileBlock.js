@@ -5,9 +5,12 @@ import styled from 'styled-components'
 
 const ProfileSection = styled.div`
     background-color: #575757
-    margin: .5em;
+    margin: auto;
+    margin-bottom: .5em
+    margin-top: .5em;
     padding: .5em;
     border-radius: 3%
+    width: 19em;
 `;
 
 const ScreenName = styled.h1`

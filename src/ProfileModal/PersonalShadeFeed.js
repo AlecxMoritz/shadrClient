@@ -3,6 +3,9 @@ import { Button } from 'reactstrap';
 
 import styled from 'styled-components'
 import UpdateMyShade from './UpdateMyShade'
+import UpdateShadeModal from './UpdateShadeModal'
+
+
 const Shade = styled.div`
     background-color: #575757
     margin: .5em;
@@ -21,6 +24,12 @@ const Logo = styled.img`
 
 `;
 
+const UserControls = styled.div`
+    position: relative;
+    float: right;
+    bottom: 1.7em;
+`;
+
 const PersonalShadeFeed = (props) => {
     
         return (
@@ -33,15 +42,28 @@ const PersonalShadeFeed = (props) => {
                         return(
                         <Shade key={id}>
                             <ScreenName>{shade.ownerscreenname}</ScreenName>
-                            <p>{shade.text}</p>
+                            <p style={{marginBottom: '1.8em'}}>{shade.text}</p>
+
                             <div>
-                                
+                                <UserControls>
                                 <div className="btn-group">
-                                <UpdateMyShade getMyShades={props.getMyShades} id={shade.id} text={shade.text}/>
-                                <Button id={shade.id} onClick={props.delete}>delete</Button> 
-                                <Logo src={require('../assets/angryBeFunkyEdit.png')} id={shade.id} alt="logo"  height="25px" width="25px"/>
                                 <span>{shade.totaldislikes}</span>
+                                <Logo src={require('../assets/angryBeFunkyEdit.png')} id={shade.id} alt="logo"  height="25px" width="25px"/>
+
+
+                                <div></div>
+
+                                <UpdateShadeModal getMyShades={props.getMyShades} id={shade.id} text={shade.text}/>
+                                
+                                
+
+                                <img src={require('../assets/deleteBeFunkyEdit.png')} id={shade.id} onClick={props.delete} alt="delete"  height="25px" width="25px"/>                            
+
+                                
+                            
+
                                 </div>
+                            </UserControls>
                             </div>
                         </Shade> 
                         )

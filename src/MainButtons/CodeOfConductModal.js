@@ -28,8 +28,9 @@ const customStyles = {
       borderWidth: '1.5px',
       borderRadius: '3%',
       overflow: 'scroll',
-      height: '500px', // <-- This sets the height
-      overlfow: 'scroll' //
+      height: '30em', 
+      width: '20.2em',
+      overflow: 'scroll' //
     },
 
     overlay: {
@@ -84,7 +85,7 @@ class CodeOfConductModal extends React.Component {
           contentLabel="Example Modal"
         >
 
-          <h2 ref={subtitle => this.subtitle = subtitle}>shadr code of conduct</h2>
+          <center><h2 ref={subtitle => this.subtitle = subtitle}>shadr code of conduct</h2></center>
           <div><center>just incase you need a little refresher ;)</center></div>
           <hr />
           <br />
@@ -99,13 +100,13 @@ class CodeOfConductModal extends React.Component {
             <br />
             <div>You will refrain from posting anything condeming about anyone on a basis of: race, sexual orientation or preference, gender identity, sexual identity, gender presentation, or similar way of life. shadr reserves the right for interperation of shades, and may delete your shade if it is deemed condeming on any personal front. </div>
             <br />
-            <div>You will refrain from targeting a certain memeber of shadr with any of your shades.</div>
+            <div>You will refrain from specifically targeting a certain memeber of shadr with any of your shades.</div>
             <br />
             <div>You will refrain from posting any personal information about yourself or others. Including but not limited to: names, addresses, work places, or frequented locations.</div>
             <br />
             <div>If asked to cease and desist, you will do so immediately.</div>
             <br />
-            <div>Violations of shadr rules will be determined by admins. Decisions are final and the offending shade may be deleted without warning. shadr is not requied to save any shades deemed inappropriate for the platform.</div>
+            <div>Violations of shadr rules will be determined by admins. Decisions are final and the offending shades or users may be deleted without warning. shadr is not requied to save any shades deemed inappropriate for the platform.</div>
             <br />
             <div>shadr reserves the right to terminate any account that engages in inappropriate behaviour without warning.</div>
             <br />

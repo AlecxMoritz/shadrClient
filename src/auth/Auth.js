@@ -7,13 +7,15 @@ import SignUpModal from './SignUpModal'
 
 const AuthDiv = styled.div`
     background-color: #575757
-    height: 70vw;
-    width: 90vw;
-    margin: 1em;
+    height: 16em;
+    width: 16em;
+    margin: auto;
     padding: 1em;
     text-align: center;
     border-radius: 5%
     box-shadow: 13px 18px 3px rgb(30, 30, 30);
+    position: relative
+    
 `
 
 const Auth = (props) => {

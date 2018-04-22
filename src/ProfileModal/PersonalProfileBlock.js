@@ -7,6 +7,7 @@ const ProfileSection = styled.div`
     background-color: #575757
     margin: .5em;
     padding: .5em;
+    border-radius: 3%
 `;
 
 const ScreenName = styled.h1`

@@ -72,15 +72,18 @@ class UpdateMyShade extends React.Component {
     render() {
       return (
         <div>
-          <Button color="danger" onClick={this.clickMe}>edit</Button>
+        <img src={require('../assets/penEdit.png')}  alt="update"  height="25px" width="25px" onClick={this.clickMe}/>
           <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
             <ModalHeader toggle={this.toggle}>{localStorage.getItem('screenname')}</ModalHeader>
+
             <ModalBody>
+
                 <Form onSubmit={this.handleSubmit}>
                     <FormGroup>
                     <Input id="text" type="text" name="text" value={this.state.text} placeholder="edit your shade" onChange={this.handleChange} />
                     </FormGroup>
                 </Form>
+                
             </ModalBody>
             <ModalFooter>
               <Button color="primary" onClick={this.clickMeToo}>save</Button>{' '}
