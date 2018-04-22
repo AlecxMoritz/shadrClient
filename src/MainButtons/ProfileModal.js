@@ -32,8 +32,9 @@ const customStyles = {
       borderWidth: '1.5px',
       borderRadius: '3%',
       overflow: 'scroll',
-      height: '500px', // <-- This sets the height
-      overflow: 'scroll' //
+      height: '30em', 
+      width: '20em', // <-- This sets the height
+      overflow: 'auto' //
     },
 
     overlay: {

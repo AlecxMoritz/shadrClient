@@ -8,6 +8,8 @@ import { Form, FormGroup, Input } from 'reactstrap'
 
 const customStyles = {
 
+    
+ 
     modal: {
       position: 'absolute',
       top: '40px',
@@ -15,7 +17,7 @@ const customStyles = {
       right: '40px',
       bottom: '40px',
       border: 'null',
-      overflow: 'scroll'
+      overflow: 'auto'
     },
 
     content: {
@@ -31,8 +33,9 @@ const customStyles = {
       borderWidth: '1.5px',
       borderRadius: '3%',
       overflow: 'scroll',
-      height: '500px', // <-- This sets the height
-      overflow: 'scroll' //
+      height: '14em', 
+      width: '20em', // <-- This sets the height
+      overflow: 'auto' //
     },
 
     overlay: {
@@ -65,7 +68,7 @@ class UpdateShadeModal extends React.Component {
     this.clickMe = this.clickMe.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.clickMeToo = this.clickMeToo.bind(this)
+    this.save = this.save.bind(this)
   }
 
   clickMe(event) {
@@ -73,8 +76,8 @@ class UpdateShadeModal extends React.Component {
     this.setShadeToUpdate()
 }
 
-clickMeToo(event) {
-  this.toggle()
+save(event) {
+  this.closeModal()
   this.handleSubmit(event)
 }
 
@@ -147,16 +150,14 @@ handleSubmit(event){
 
         <Form onSubmit={this.handleSubmit}>
                     <FormGroup>
-                      <br />
-                    <textarea maxLength="120" id="text" type="text" name="text" value={this.state.text} style={{height: '15em'}} placeholder="edit your shade" onChange={this.handleChange} />
+                      
+                    <textarea maxLength="120" id="text" type="text" name="text" value={this.state.text} style={{width: '17em', height: '4.7em', marginTop: 'auto', borderRadius: '5px' }} placeholder="edit your shade" onChange={this.handleChange} />
                     </FormGroup>
                 </Form>
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-          <Button style={{backgroundColor: '#FF8921'}} onClick={this.clickMeToo}>save</Button>{' '}
+              
+              
+              
+          <Button style={{backgroundColor: '#FF8921'}} onClick={this.save}>save</Button>{' '}
               <Button style={{backgroundColor: '#FF8921'}} onClick={this.closeModal}>nevermind</Button>
         </Modal>
       </div>

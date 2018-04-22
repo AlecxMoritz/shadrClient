@@ -31,7 +31,7 @@ const customStyles = {
         overflow: 'scroll',
         height: '30em', 
         width: '20.2em',
-        overlfow: 'scroll' //
+        overflow: 'auto' //
     },
 
     overlay: {
@@ -146,6 +146,9 @@ handleSubmit(event) {
       localStorage.setItem('screenname', data.user.screenname)
       this.props.setToken(data.sessionToken);
       
+  }).catch(function(error) {
+    return
+    // set state to return an error state and render an or alert
   })
   
   event.preventDefault();
@@ -177,7 +180,7 @@ handleSubmit(event) {
             <br />
             <div>You will not use your shadr account in any attempts of cyberbullying.</div>
             <br />
-            <div>You will refrain from posting anything condeming about anyone on a basis of: race, sexual orientation or preference, gender identity, sexual identity, gender presentation, or similar way of life. </div>
+            <div>You will refrain from posting anything condeming about anyone on a basis of: race, sexual orientation or preference, gender identity, sexual identity, gender presentation, or similar basis. </div>
             <br />
             <div>shadr reserves the right for interperation of shades, and may delete your shade without warning it we feel it violates our rules. </div>
             <br />
@@ -220,11 +223,11 @@ handleSubmit(event) {
                 <FormGroup>
                     
                     <br />
-                    <Input type="text" name="screenname" id="screenname" placeholder="choose your screenname" onChange={this.handleChange} />
+                    <Input type="text" name="screenname" id="screenname" maxLength="10" placeholder="screenname up to 10 characters" onChange={this.handleChange} />
                 </FormGroup>
                 <FormGroup>
                     <br />
-                    <Input type="password" name="password" id="password" placeholder="password with at least six characters" onChange={this.handleChange} />
+                    <Input type="password" name="password" id="password" minLength="6" placeholder="password with at least six characters" onChange={this.handleChange} />
                 </FormGroup>
                 </Form>
                 

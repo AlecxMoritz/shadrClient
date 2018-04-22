@@ -30,7 +30,7 @@ const customStyles = {
       overflow: 'scroll',
       height: '30em', 
       width: '20.2em',
-      overflow: 'scroll' //
+      overflow: 'auto' //
     },
 
     overlay: {
@@ -89,7 +89,7 @@ class CodeOfConductModal extends React.Component {
           <div><center>just incase you need a little refresher ;)</center></div>
           <hr />
           <br />
-          <div>shadr is a platform for personal venting and stress release. Did the drive through down the street get your order wrong again? and again?<br />Did that guy in the meeting get all the praise for repeating exactly what you said?<br />Do you feel like you need to shout to th void for a minute? Then read our rules, join shadr, and cast your shade.
+          <div>shadr is a platform for personal venting and stress release. Did the drive through down the street get your order wrong again? and again? Has the woman in line ahead of you at the gas station been arguing about a twenty-five cent price difference for the last four minutes? Did that guy in the meeting get all the praise for repeating exactly what you said? Do you feel like you need to shout to the void for a minute? Then read our rules, join shadr, and throw your shade.
           </div>
           <br />
           <div>By making an account on shadr you agree to follow the rules we have set forth. They are as follows:</div>
@@ -98,7 +98,9 @@ class CodeOfConductModal extends React.Component {
             <br />
             <div>You will not use your shadr account in any attempts of cyberbullying.</div>
             <br />
-            <div>You will refrain from posting anything condeming about anyone on a basis of: race, sexual orientation or preference, gender identity, sexual identity, gender presentation, or similar way of life. shadr reserves the right for interperation of shades, and may delete your shade if it is deemed condeming on any personal front. </div>
+            <div>You will refrain from posting anything condeming about anyone on a basis of: race, sexual orientation or preference, gender identity, sexual identity, gender presentation, or similar basis. </div>
+            <br />
+            <div>shadr reserves the right for interperation of shades, and may delete your shade without warning it we feel it violates our rules. </div>
             <br />
             <div>You will refrain from specifically targeting a certain memeber of shadr with any of your shades.</div>
             <br />
