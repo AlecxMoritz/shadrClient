@@ -128,7 +128,11 @@ class ProfileModal extends React.Component {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <h2 ref={subtitle => this.subtitle = subtitle}>{localStorage.getItem('screenname')}</h2>
+          <h2 ref={subtitle => this.subtitle = subtitle}>{localStorage.getItem('screenname')}
+          
+          {/* pick up here */}
+          </h2><Button>dislikes</Button>
+
           <br />
         <PersonalProfileBlock />
         <br/>

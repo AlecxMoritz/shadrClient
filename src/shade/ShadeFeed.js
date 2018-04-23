@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'reactstrap';
 import styled from 'styled-components'
-
+import Dislike from './Dislike'
 
 const Shade = styled.div`
     background-color: #575757
@@ -16,15 +16,13 @@ const ScreenName = styled.h2`
     color: #FF8921
 `;
 
-const Logo = styled.img`
-  position: relative;
 
-`;
 
 const Dislikes = styled.div`
     position: relative;
     float: right;
     bottom: 1.5em;
+    display: inline-block;
 `;
 
 const ShadeFeed = (props) => {
@@ -37,10 +35,10 @@ const ShadeFeed = (props) => {
                             <ScreenName>{shade.ownerscreenname}</ScreenName>
                             <p>{shade.text}</p>
                             <Dislikes>
-                                
-                                 <Logo src={require('../assets/angryBeFunkyEdit.png')} id={shade.id} alt="logo"  height="25px" width="25px"  />
+                                <span style={{display: "inline-block", position: 'relative', right: "1em"}}>{shade.totaldislikes}</span>
+
+                                <Dislike shadeid={id} ownerscreenname={shade.ownerscreenname} text={shade.text}  />
                                  
-                                <span>{shade.totaldislikes}</span>
                                 
                             </Dislikes>
                         </Shade> 
