@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, Input ,  FormGroup, } from 'reactstrap';
 import '../App.css';
+import SignUpForm from './SignUpForm';
 // import Link from 'valuelink'
 // import { Input } from 'valuelink/tags.jsx'
 
@@ -95,6 +96,9 @@ class SignUpModal extends React.Component {
             <Modal id="SignUpModalTwo"isOpen={this.state.nestedModal} toggle={this.toggleNested} onClosed={this.state.closeAll ? this.toggle : undefined}>
             <ModalHeader>Some info from you rq</ModalHeader>
             <ModalBody>
+
+                <SignUpForm />
+
                 <Form>
                 <FormGroup>
                     <Input type="text" name="name" id="name" placeholder="name" onChange={this.handleChange} />

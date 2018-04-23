@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import { Button }from 'reactstrap';
 import { Form, FormGroup, Input } from 'reactstrap'
+import SignUpForm from './SignUpForm';
 
 //  T H I S     I S      T H E     S H A D R     M O D A L
 
@@ -50,8 +51,8 @@ const customStyles = {
 Modal.setAppElement('body')
 
 class SignUpModal extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       modalIsOpen: false,
@@ -211,30 +212,13 @@ handleSubmit(event) {
               <h2 ref={subtitle => this.subtitle = subtitle}><center>sign up</center></h2>
               <br />
               <br />
-                         <Form>
-                <FormGroup>
-                    
-                    <Input type="text" name="name" id="name" placeholder="enter your name" onChange={this.handleChange} />
-                </FormGroup>
-                <FormGroup>
-                    <br />
-                    <Input type="email" name="email" id="email" placeholder="enter a valid email"  onChange={this.handleChange} />
-                </FormGroup>
-                <FormGroup>
-                    
-                    <br />
-                    <Input type="text" name="screenname" id="screenname" maxLength="10" placeholder="screenname up to 10 characters" onChange={this.handleChange} />
-                </FormGroup>
-                <FormGroup>
-                    <br />
-                    <Input type="password" name="password" id="password" minLength="6" placeholder="password with at least six characters" onChange={this.handleChange} />
-                </FormGroup>
-                </Form>
+
+              <SignUpForm closeAll={this.closeAll} setToken={this.props.setToken} setScreenname={this.props.setScreenname} />
+
+                         
                 
                 <br />
-          <Button style={{backgroundColor: '#FF8921'}} onClick={this.closeAll}>nevermind, cancel</Button>
           
-          <Button style={{backgroundColor: '#FF8921'}} onClick={this.closeModal} onClick={this.handleSubmit}>sign me up</Button>
           </Modal>
 
           <Button style={{backgroundColor: '#FF8921'}} onClick={this.closeModal}>this isn't for me</Button>
