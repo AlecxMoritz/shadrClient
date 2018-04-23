@@ -3,7 +3,7 @@ import { Button } from 'reactstrap';
 import ProfileBlock from '../profile/ProfileBlock'
 import NewShade from '../shade/NewShade';
 import ShadeFeed from '../shade/ShadeFeed';
-import CodeOfConductButton from '../MainButtons/CodeOfConductButton';
+
 import CodeOfConductModal from '../MainButtons/CodeOfConductModal';
 import styled from 'styled-components'
 
@@ -35,6 +35,7 @@ class Home extends React.Component  {
         }
         this.getShades = this.getShades.bind(this);
         this.deleteShade = this.deleteShade.bind(this)
+        
     }
 
 
@@ -81,6 +82,7 @@ class Home extends React.Component  {
         this.getShades();
     }
 
+   
 
 
     render() {

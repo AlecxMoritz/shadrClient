@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'reactstrap';
-
 import styled from 'styled-components'
+
 
 const Shade = styled.div`
     background-color: #575757
@@ -37,15 +37,13 @@ const ShadeFeed = (props) => {
                             <ScreenName>{shade.ownerscreenname}</ScreenName>
                             <p>{shade.text}</p>
                             <Dislikes>
-                                 <Logo src={require('../assets/angryBeFunkyEdit.png')} id={shade.id} alt="logo"  height="25px" width="25px" />
+                                
+                                 <Logo src={require('../assets/angryBeFunkyEdit.png')} id={shade.id} alt="logo"  height="25px" width="25px"  />
                                  
                                 <span>{shade.totaldislikes}</span>
-                                {/* <UpdateShade getShades={props.getShades}id={shade.id} text={shade.text}/>
-                                <Button id={shade.id} onClick={props.delete}>delete</Button>  */}
+                                
                             </Dislikes>
-                        </Shade> // need a ternary to dispay bottom buttons if it is a shade the user owns 
-                        // onclick event to open an update modal
-                        // pass props of update to modal
+                        </Shade> 
                         )
                     })
                 }
