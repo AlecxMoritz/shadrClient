@@ -46,7 +46,7 @@ const customStyles = {
 
 Modal.setAppElement('body')
 
-class TestModal extends React.Component {
+class UpdateProfile extends React.Component {
   constructor() {
     super();
 
@@ -75,7 +75,7 @@ class TestModal extends React.Component {
   render() {
     return (
       <div>
-        <Button style={{backgroundColor: '#FF8921'}} onClick={this.openModal}>OPEN</Button>
+        <Button style={{backgroundColor: '#FF8921', display: 'inline-block'}} onClick={this.openModal}>update profile</Button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -102,4 +102,4 @@ class TestModal extends React.Component {
   }
 }
 
-export default TestModal;
+export default UpdateProfile;

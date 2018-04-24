@@ -131,7 +131,7 @@ class ProfileModal extends React.Component {
           <h2 ref={subtitle => this.subtitle = subtitle}>{localStorage.getItem('screenname')}
           
           {/* pick up here */}
-          </h2><Button>dislikes</Button>
+          </h2>
 
           <br />
         <PersonalProfileBlock />

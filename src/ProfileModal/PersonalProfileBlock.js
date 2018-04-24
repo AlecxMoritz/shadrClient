@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
-
+import Dislikes from '../MainButtons/Dislikes'
+import UpdateProfile from '../MainButtons/UpdateProfile'
 // styles
 
 const ProfileSection = styled.div`
@@ -64,6 +65,11 @@ export default class ProfileBlock extends React.Component {
                 <ScreenName>{this.state.screenname}</ScreenName>
                 <UserRank>{this.state.userrank}</UserRank>
                 <span>{this.state.dislikesgiven}</span>
+                
+                <div className="btn-group" roll="group" style={{display: 'inline-block'}}>
+                <Dislikes style={{display: 'inline-block'}} />
+                <UpdateProfile style={{display: 'inline-block'}} />
+                </div>
             </ProfileSection>
         )
     }

@@ -24,7 +24,7 @@ export default class Dislike extends React.Component {
     }
 
     handleDislike() {
-        console.log("Disliked")
+        
         fetch('http://localhost:8000/dislike/new', {
             method: 'POST',
             body: JSON.stringify({ dislike: this.props }),
@@ -35,7 +35,7 @@ export default class Dislike extends React.Component {
         })
         .then((res) => res.json())
         .then((dislikeInfo) => {
-            console.log(dislikeInfo)
+           
         })
     }
 
